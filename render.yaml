@@ -1,0 +1,27 @@
+# Information website only. This file never deploys the financial collector.
+services:
+  - type: web
+    runtime: static
+    name: etherfi-collector
+    repo: https://github.com/coding-vasco/etherfi-collector-site
+    branch: main
+    autoDeployTrigger: "off"
+    buildCommand: "true"
+    staticPublishPath: public
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
+    routes:
+      - type: rewrite
+        source: /privacy
+        destination: /privacy.html
+    headers:
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: no-referrer

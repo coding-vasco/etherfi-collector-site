@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Etherfi Collector is a private financial monitoring tool that records source observations in an owner-controlled Google Sheets workbook.">
+  <meta name="color-scheme" content="light">
+  <title>Etherfi Collector</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="shell header">
+    <a class="brand" href="/">Etherfi Collector</a>
+    <nav aria-label="Main navigation"><a href="/privacy">Privacy policy</a></nav>
+  </header>
+  <main id="main" class="shell">
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">Private monitoring · Public project information</p>
+      <h1 id="title">Financial observations,<br>with a clear source.</h1>
+      <p class="lead">Etherfi Collector is a private financial data monitoring and Google Sheets collection tool. It helps its owner keep a dated record of supported onchain borrowing, risk and vault observations for review.</p>
+      <a class="button" href="/privacy">Read the privacy policy <span aria-hidden="true">→</span></a>
+    </section>
+    <section class="details" aria-labelledby="purpose">
+      <h2 id="purpose">Purpose and access</h2>
+      <p>The separate collector implementation reads supported public blockchain contracts. When configured and explicitly authorized by its owner, it reads and writes designated areas of a Google Sheets workbook to preserve observations, source details and collection checkpoints.</p>
+      <p>Google Sheets access supports recordkeeping and verification of saved data. The tool does not execute asset transfers, trades, borrowing, repayments or wallet approvals.</p>
+      <p>This website provides application and privacy information for Google OAuth configuration. It has no sign-in, account connection, financial dashboard or data-entry form. Visiting it does not authorize Google access or activate the collector.</p>
+    </section>
+    <section class="details" aria-labelledby="control">
+      <h2 id="control">Controlled by the owner</h2>
+      <p>Google access requires a separate consent step. The owner controls the destination workbook, deployment and credentials, and can revoke access or stop collection. The privacy policy explains the data flow, storage and limits.</p>
+      <p class="muted">An independent personal project. Not operated by or affiliated with ether.fi, Google or Render.</p>
+    </section>
+  </main>
+  <footer class="shell footer">
+    <span>Etherfi Collector</span>
+    <a href="/privacy">Privacy policy</a>
+  </footer>
+</body>
+</html>

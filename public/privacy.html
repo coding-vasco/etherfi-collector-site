@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Etherfi Collector accesses, processes and stores Google Sheets data, and how the owner controls access.">
+  <meta name="color-scheme" content="light">
+  <title>Privacy policy · Etherfi Collector</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="shell header">
+    <a class="brand" href="/">Etherfi Collector</a>
+    <nav aria-label="Main navigation"><a href="/privacy" aria-current="page">Privacy policy</a></nav>
+  </header>
+  <main id="main" class="shell policy">
+    <p class="eyebrow">Application information</p>
+    <h1>Privacy policy</h1>
+    <p class="muted">Effective 15 November 2026</p>
+    <p>This policy describes the Etherfi Collector implementation and this public information website. The collector is a private tool controlled by its owner. This website does not offer public registration, connect Google accounts or run financial collection.</p>
+
+    <h2>Google access and its purpose</h2>
+    <p>The collector requests the Google Sheets permission <code>https://www.googleapis.com/auth/spreadsheets</code>. This permission can allow reading and editing spreadsheets available to the authorizing Google account; Google does not limit this scope to one workbook. The application code targets a configured workbook and checks the intended sheet identities.</p>
+    <p>It reads designated spreadsheet cells to restore collection state, check for prior observations and verify saved values. It writes financial observations, provenance, source-attempt records and checkpoints to designated areas. The permission is used for these collection and recordkeeping functions. No additional Google scope is required by the collector's current authentication code.</p>
+
+    <h2>Data processed</h2>
+    <p>Supported records can include account-related blockchain addresses, native asset quantities, borrowing balances and rates, risk parameters, vault conversion observations, scoped blockchain events, source block numbers and hashes, timestamps and collection errors. Existing spreadsheet data read for state restoration or verification can contain financial information.</p>
+    <p>Public blockchain data may still reveal sensitive financial activity when associated with an account. The public website and its source repository do not contain the owner's financial records, wallet addresses, workbook identifiers or credentials.</p>
+
+    <h2>Storage and credentials</h2>
+    <p>The collector stores observations, raw source evidence, attempt status and durable collection state in the configured Google Sheets workbook. The operator may also retain local validation files and implementation archives. The implementation does not automatically delete these records.</p>
+    <p>The OAuth setup helper saves its credential file locally. On Windows, its default location is the user's Local AppData directory, outside the project workspace; an explicit output option can change that location. If a collector deployment is separately approved, the operator supplies the OAuth credential JSON through a Render environment secret. Credentials are not part of this public static site or its repository.</p>
+    <p>The implementation does not add its own encryption layer to stored records or credential files. Access controls, transport protections, provider retention and provider backups depend on the operator's configuration and the services used.</p>
+
+    <h2>Services and disclosure</h2>
+    <p>Google processes data sent to the Google Sheets API and holds the workbook. A blockchain RPC provider receives requests needed to read supported onchain data, including relevant public addresses. If the collector is deployed on Render, Render hosts that process and its configured environment and may process operational logs. These are separate from this website's static hosting.</p>
+    <p>The owner may separately authorize connected tools, including ChatGPT, to read saved observations for analysis. This website does not initiate that access. Workbook sharing and any additional exports are controlled by the owner and are not changed by visiting this site.</p>
+    <p>The collector code does not sell Google user data, use it for advertising, or send it to train machine-learning models. The tool's use of information received from Google APIs is limited to the purposes disclosed here and must comply with the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+
+    <h2>This website</h2>
+    <p>The site consists of static HTML and CSS. It has no application backend, authentication, analytics scripts, advertising, forms or application-set cookies. Render, as the hosting provider, may process technical request information such as IP addresses, requested URLs and request times under its own service practices. See <a href="https://render.com/privacy">Render's privacy policy</a>.</p>
+
+    <h2>Owner control, retention and deletion</h2>
+    <p>The owner can revoke the application's Google access through <a href="https://myaccount.google.com/connections">Google Account connections</a>, stop or suspend a collector deployment, remove its configured credentials, and delete locally retained credential files. Revocation stops future authorized API access; it does not remove observations already saved.</p>
+    <p>To remove retained data, the owner must review and delete the relevant workbook records, local files and any separately created copies. This tool has no automatic retention schedule, deletion endpoint or guarantee of deletion from provider history or backups.</p>
+
+    <h2>Questions and changes</h2>
+    <p>For general questions about this project or policy, contact the maintainer through <a href="https://github.com/coding-vasco/etherfi-collector-site/issues">the website repository's issue tracker</a>. Issues are public: do not post credentials, account records or other private financial data there.</p>
+    <p>This policy should be updated when the application's data handling changes. The effective date above identifies this version.</p>
+  </main>
+  <footer class="shell footer"><a href="/">Etherfi Collector homepage</a><span>Privacy policy</span></footer>
+</body>
+</html>

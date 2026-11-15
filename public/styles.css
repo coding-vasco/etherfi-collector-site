@@ -1,0 +1,29 @@
+:root { color-scheme: light; --ink: #172d39; --muted: #50636d; --line: #d6dfdf; --accent: #14675d; --paper: #f7f9f7; }
+* { box-sizing: border-box; }
+html { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.7; }
+body { margin: 0; }
+.shell { width: min(100% - 3rem, 780px); margin-inline: auto; }
+a { color: var(--accent); text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+.skip { position: absolute; top: -5rem; left: 1rem; background: white; padding: .6rem 1rem; z-index: 1; }
+.skip:focus { top: 1rem; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.7rem; border-bottom: 1px solid var(--line); }
+.brand { color: var(--ink); font-size: 1.05rem; font-weight: 720; text-decoration: none; letter-spacing: -.02em; }
+nav { font-size: .9rem; }
+.intro { padding-block: 4.8rem 3.8rem; }
+.eyebrow { font-size: .76rem; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 0 0 1.2rem; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 620; letter-spacing: -.045em; line-height: 1.12; margin: 0 0 1.5rem; }
+h2 { font-size: 1.2rem; letter-spacing: -.015em; line-height: 1.35; margin: 0 0 .9rem; }
+p { margin: 0 0 1.1rem; }
+.lead { font-size: 1.18rem; max-width: 44rem; color: var(--muted); }
+.button { display: inline-flex; gap: 1.6rem; align-items: center; margin-top: 1rem; background: var(--accent); color: white; padding: .75rem 1.1rem; border-radius: .35rem; text-decoration: none; font-weight: 600; }
+.button:hover { background: #0f5149; }
+.details { padding-block: 2.1rem; border-top: 1px solid var(--line); }
+.muted { color: var(--muted); font-size: .94rem; }
+.policy { padding-block: 3.7rem 2rem; }
+.policy h1 { font-size: clamp(2.3rem, 5vw, 3rem); margin-bottom: .6rem; }
+.policy h2 { margin-top: 2.4rem; }
+code { font-size: .9em; overflow-wrap: anywhere; background: #eaf0ed; padding: .12rem .25rem; border-radius: .2rem; }
+.footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); padding-block: 1.8rem; margin-top: 1.5rem; color: var(--muted); font-size: .85rem; }
+@media (max-width: 480px) { .shell { width: calc(100% - 2rem); } .intro { padding-block: 3rem; } .header, .footer { flex-wrap: wrap; } }
